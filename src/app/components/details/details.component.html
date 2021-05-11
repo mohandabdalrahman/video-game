@@ -1,6 +1,6 @@
-<div class="details">
+<div class="details" *ngIf="game">
   <div class="game-banner">
-    <img src="{{game.background_image}}" alt="" class="game-banner-img">
+    <img src="{{game?.background_image}}" alt="" class="game-banner-img">
   </div>
   <div class="game-content">
     <div class="details-wrapper">

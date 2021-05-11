@@ -36,16 +36,11 @@ export class HttpService {
       `${env.BASE_URL}/games/${id}/screenshots`
     );
     return forkJoin({
-      //@ts-ignore
       gameInfoRequest,
       gameScreenshotsRequest,
       gameTrailerRequest,
     }).pipe(
       map((resp: any) => {
-        console.log(
-          "🚀 ~ file: http.service.ts ~ line 45 ~ HttpService ~ map ~ resp",
-          resp
-        );
         return {
           ...resp["gameInfoRequest"],
           screenshots: resp["gameScreenshotsRequest"],
