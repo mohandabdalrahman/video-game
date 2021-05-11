@@ -10,12 +10,13 @@
         <p class="game-header-genre">
           <span *ngFor="let genre of game.genres;let last=last">{{genre.name}} <span *ngIf="!last">,</span> </span>
         </p>
-        <div class="game-gauge">
-          <mwl-gauge class="two" [max]="100" [dialStartAngle]="180" [dialEndAngle]="0" [value]="gameRating" [animated]="true" [color]="getColor" [animationDuration]="2">
-            <a href="{{game.metacritic_url}}" target="_blank" class="game-gauge-label">Metacritic</a>
-          </mwl-gauge>
-        </div>
+            <div class="game-gauge">
+              <mwl-gauge class="two" [max]="100" [dialStartAngle]="180" [dialEndAngle]="0" [value]="gameRating" [animated]="true" [color]="getColor" [animationDuration]="2">
+              </mwl-gauge>
+              <a class="game-gauge-label" target="_blank" href="{{ game.metacritic_url }}">Metacritic</a>
+            </div>
         <!-- tabs -->
+        <app-game-tabs [game]="game"></app-game-tabs>
       </div>
     </div>
   </div>
